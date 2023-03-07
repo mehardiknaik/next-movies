@@ -28,7 +28,7 @@ export const TrendingHero = ({ data }: any) => {
             className="h-[300px] mobile:h-[200px] relative flex items-center cursor-pointer"
           >
             {/* bg image */}
-            <div className="absolute left-0 top-0 right-0 bottom-0">
+            <div className="absolute left-0 top-0 right-0 bottom-0 hover:scale-105 duration-[2000ms]">
               <div className="overlay-slick-hero"></div>
               <Image
                 src={`https://image.tmdb.org/t/p/original${e.backdrop_path}`}

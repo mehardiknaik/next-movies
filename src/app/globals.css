@@ -36,8 +36,8 @@ body {
   bottom: 0;
   background: linear-gradient(
     to right,
-    theme('colors.body') 30%,
-    transparent 90%,
+    theme('colors.body') 25%,
+    transparent 80%,
     theme('colors.body')
   );
 }

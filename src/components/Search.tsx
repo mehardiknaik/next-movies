@@ -98,18 +98,7 @@ const Search = () => {
                 {/* title and genres */}
                 <div className="px-3 truncate">
                   <p className="text-base truncate">{film.title}</p>
-                  {/* <ul className="flex flex-wrap gap-x-1.5 text-sm opacity-[0.7]">
-                  {film.genreIds.map((id, i) => (
-                    <li key={i}>
-                      {
-                        globalContext.genres[film.mediaType].find(
-                          (g) => g.id === id
-                        )?.name
-                      }{" "}
-                      {i !== film.genreIds.length - 1 ? "," : ""}
-                    </li>
-                  ))}
-                </ul> */}
+                  <p className="text-sm text-neutral-400">{film.media_type}</p>
                 </div>
               </Link>
             ))}

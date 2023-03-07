@@ -1,6 +1,7 @@
 import "./globals.css";
 import Header from "../components/Header";
 import "swiper/swiper-bundle.min.css";
+import Footer from "@/components/Footer";
 
 export default function RootLayout({
   children,
@@ -17,6 +18,7 @@ export default function RootLayout({
       <body>
         <Header />
         <main className="container">{children}</main>
+        <Footer/>
       </body>
     </html>
   );

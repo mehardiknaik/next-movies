@@ -15,10 +15,10 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body>
+      <body className="scrollbar-thumb-primary scrollbar-thin scrollbar-track-header">
         <Header />
         <main className="container">{children}</main>
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );

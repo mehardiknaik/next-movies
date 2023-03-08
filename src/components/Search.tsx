@@ -80,7 +80,7 @@ const Search = () => {
             shadow-lg
         "
         >
-          <div className="max-h-[480px] overflow-y-auto scrollbar scrollbar-thumb-primary scrollbar-track-header pr-3">
+          <div className="max-h-[480px] overflow-y-auto scrollbar-thin scrollbar-thumb-primary scrollbar-track-header pr-3">
             {items.map((film: any) => (
               <Link
                 href={`/movie/${film.id}`}

@@ -34,9 +34,7 @@ export default async function Pages({ params: { slug } }: any) {
 
   return (
     <>
-      <title>{data.title}</title>
-      <link rel="icon" href={`https://image.tmdb.org/t/p/w200${data.poster_path}`} />
-      <meta name="description" content={data.overview} />
+
       <div>{JSON.stringify(data)}</div>
     </>
   );

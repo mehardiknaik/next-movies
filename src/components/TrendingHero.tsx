@@ -23,7 +23,7 @@ export const TrendingHero = ({ data }: any) => {
       {data.map((e: any) => (
         <SwiperSlide key={e.id}>
           <Link
-            href={`/movie/${e.id}`}
+            href={`/${e.media_type}/${e.id}`}
             prefetch={false}
             className="h-[300px] mobile:h-[200px] relative flex items-center cursor-pointer"
           >
@@ -36,10 +36,10 @@ export const TrendingHero = ({ data }: any) => {
                 width={800}
                 height={800}
                 className="rounded-sm bg-primary h-full w-full"
-              ></Image>
+              />
             </div>
             {/* text */}
-            <div className="flex flex-col gap-3 items-start relative z-10 max-w-[50%] mobile:max-w-[100%]">
+            <div className="flex ml-12 mobile:ml-1 flex-col gap-3 items-start relative z-10 max-w-[50%] mobile:max-w-[100%]">
               <p className="text-xl line-clamp-1">{e.title}</p>
               <p className="text-sm line-clamp-3">{e.overview}</p>
               {/* <button className="px-3 py-1.5 flex items-center gap-3 bg-primary rounded-md">

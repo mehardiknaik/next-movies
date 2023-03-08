@@ -1,4 +1,3 @@
-import Card from "@/components/Card";
 import Section from "@/components/Section";
 import { TrendingHero } from "@/components/TrendingHero";
 
@@ -33,10 +32,10 @@ export default async function Page() {
   const data = await getData();
   return (
     <div>
-      <TrendingHero data={data.trending.results}/>
+      <TrendingHero data={data.trending.results} />
       <Section title="In Theater" data={data.nowPlaying.results} />
       {/* <Section title="Tranding" data={data.trending.results} /> */}
-      <Section title="Popular" data={data.popular.results} />
+      <Section title="What's Popular" data={data.popular.results} />
     </div>
   );
 }

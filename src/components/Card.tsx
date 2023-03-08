@@ -3,15 +3,19 @@ import Link from "next/link";
 import React from "react";
 
 type propsType = {
-    poster_path: string;
+  poster_path: string;
   title: string;
   id: string;
+  media_type: string;
 };
 
-const Card = ({ poster_path, title, id }: propsType) => {
+const Card = ({ poster_path, title, id, media_type="movie" }: propsType) => {
   return (
-    <Link href={`/movie/${id}`} prefetch={false} className="group mx-3 my-1.5 cursor-pointer">
-        
+    <Link
+      href={`/${media_type}/${id}`}
+      prefetch={false}
+      className="group mx-3 my-1.5 cursor-pointer"
+    >
       <div
         className="
         h-[200px]
@@ -50,7 +54,7 @@ const Card = ({ poster_path, title, id }: propsType) => {
           />
         )}
       </div>
-      <p className="py-1.5 line-clamp-2">{title}</p>
+      <p className="py-1.5 line-clamp-1">{title}</p>
     </Link>
   );
 };

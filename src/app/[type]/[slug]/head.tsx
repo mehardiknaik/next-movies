@@ -3,7 +3,6 @@ async function getData(slug: any) {
     `https://api.themoviedb.org/3/movie/${slug}?api_key=26ba5e77849587dbd7df199727859189&language=en-US&append_to_response=videos,credits`,
     { next: { revalidate: 30 } }
   );
-  console.log(slug);
 
   return res.json();
 }

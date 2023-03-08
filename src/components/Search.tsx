@@ -83,7 +83,7 @@ const Search = () => {
           <div className="max-h-[480px] overflow-y-auto scrollbar-thin scrollbar-thumb-primary scrollbar-track-header pr-3">
             {items.map((film: any) => (
               <Link
-                href={`/movie/${film.id}`}
+                href={`/${film.media_type}/${film.id}`}
                 key={film.id}
                 className="flex items-start p-1.5 rounded-lg hover:bg-primary cursor-pointer m-1.5"
               >
@@ -93,11 +93,11 @@ const Search = () => {
                   width={102}
                   height={72}
                   src={`https://image.tmdb.org/t/p/w300${film.poster_path}`}
-                  className="h-[72px] min-w-[102px] w-[102px] rounded-md"
+                  className="h-[72px] min-w-[102px] w-[102px] rounded-md bg-primary"
                 ></Image>
                 {/* title and genres */}
                 <div className="px-3 truncate">
-                  <p className="text-base truncate">{film.title}</p>
+                  <p className="text-base truncate">{film.title || film.name}</p>
                   <p className="text-sm text-neutral-400">{film.media_type}</p>
                 </div>
               </Link>

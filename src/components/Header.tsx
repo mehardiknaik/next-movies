@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import Search from "./Search";
+import { RiMovie2Line } from "react-icons/ri";
 
 const Header = () => (
   <div className="bg-header sticky top-0 z-[99] p-5">
@@ -8,9 +9,7 @@ const Header = () => (
       {/* brand & menu */}
       <div className="flex items-center gap-6">
         {/* brand */}
-        <h1 className="text-2xl font-semibold">
-          <Link href={"/"}>Movielia</Link>
-        </h1>
+          <Link href={"/"}><RiMovie2Line size={30}/></Link>
         {/*  menu */}
         <div
           className="

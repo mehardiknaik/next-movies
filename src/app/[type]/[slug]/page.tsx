@@ -35,7 +35,7 @@ export default async function Pages({ params: { slug, type } }: any) {
           alt={data.title}
           width={200}
           height={300}
-          src={`https://image.tmdb.org/t/p/w300${data.poster_path}`}
+          src={data.poster_path?`https://image.tmdb.org/t/p/w300${data.poster_path}`:'/noposter.jpg'}
           className="w-[200px] min-w-[200px] h-[300px] mobile:mx-auto ml-5 min-h-[200px] object-cover rounded-xl"
         />
         <div className="px-3 flex flex-col items-start gap-3">
@@ -54,7 +54,7 @@ export default async function Pages({ params: { slug, type } }: any) {
         </div>
       </div>
 
-      {/* <div>{JSON.stringify(data)}</div> */}
+      <div>{JSON.stringify(data)}</div>
     </>
   );
 }

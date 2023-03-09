@@ -50,7 +50,7 @@ const Card = ({ poster_path, title, id, media_type="movie" }: propsType) => {
             alt={title}
             width={150}
             height={230}
-            src={`https://image.tmdb.org/t/p/w300${poster_path}`}
+            src={poster_path?`https://image.tmdb.org/t/p/w300${poster_path}`:'/noposter.jpg'}
           />
         )}
       </div>

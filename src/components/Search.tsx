@@ -11,16 +11,14 @@ const Search = () => {
 
   async function getData(e: any) {
     const { value } = e.target;
+    clearTimeout(searchTimeout.current);
     if (value.length < 3) {
       setItems([]);
       return;
     }
-    clearTimeout(searchTimeout.current);
     try {
       searchTimeout.current = setTimeout(async () => {
-        let search: any = await fetch(
-          `${process.env.NEXT_PUBLIC_API_PATH}/search/multi?api_key=${process.env.NEXT_PUBLIC_API_KEY}&language=en-US&query=${value}&page=1`
-        );
+        let search: any = await fetch(`/api/search?query=${value}`);
         search = await search.json();
         setItems(search.results);
       }, 300);
@@ -62,7 +60,7 @@ const Search = () => {
         onInput={getData}
         type="search"
         className="bg-transparent outline-0 flex-1"
-        placeholder="search..."
+        placeholder="Search..."
         ref={inputRef}
       />
 
@@ -92,12 +90,18 @@ const Search = () => {
                   alt={film.title}
                   width={102}
                   height={72}
-                  src={`https://image.tmdb.org/t/p/w300${film.poster_path}`}
+                  src={
+                    film.poster_path
+                      ? `https://image.tmdb.org/t/p/w300${film.poster_path}`
+                      : "/noposter.jpg"
+                  }
                   className="h-[72px] min-w-[102px] w-[102px] rounded-md bg-primary"
                 ></Image>
                 {/* title and genres */}
                 <div className="px-3 truncate">
-                  <p className="text-base truncate">{film.title || film.name}</p>
+                  <p className="text-base truncate">
+                    {film.title || film.name}
+                  </p>
                   <p className="text-sm text-neutral-400">{film.media_type}</p>
                 </div>
               </Link>

@@ -14,7 +14,11 @@ export default async function Head({ params: { slug } }: any) {
       <title>{data.title}</title>
       <link
         rel="icon"
-        href={`https://image.tmdb.org/t/p/w200${data.poster_path}`}
+        href={
+          data.poster_path
+            ? `https://image.tmdb.org/t/p/w200${data.poster_path}`
+            : "/favicon.ico"
+        }
       />
       <meta name="description" content={data.overview} />
       <meta content="width=device-width, initial-scale=1" name="viewport" />

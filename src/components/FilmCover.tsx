@@ -6,7 +6,7 @@ const FilmCover = ({ src }: { src: string }) => {
     <div className="h-[300px] mobile:h-[250px] left-0 right-0 top-0 relative">
       <div className="overlay-film-cover"></div>
       <Image
-        src={`https://image.tmdb.org/t/p/original${src}`}
+        src={src ? `https://image.tmdb.org/t/p/original${src}` : "/nocover.jpg"}
         alt={`cover`}
         width={800}
         height={300}

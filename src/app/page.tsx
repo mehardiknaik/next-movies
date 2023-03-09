@@ -33,9 +33,12 @@ export default async function Page() {
   return (
     <div>
       <TrendingHero data={data.trending.results} />
+      <div className="container">
       <Section title="In Theater" data={data.nowPlaying.results} />
       {/* <Section title="Tranding" data={data.trending.results} /> */}
       <Section title="What's Popular" data={data.popular.results} />
+      </div>
+
     </div>
   );
 }

@@ -17,7 +17,7 @@ export default function RootLayout({
       <head />
       <body className="scrollbar-thumb-primary scrollbar-thin scrollbar-track-header">
         <Header />
-        <main className="container">{children}</main>
+        <main >{children}</main>
         <Footer />
       </body>
     </html>

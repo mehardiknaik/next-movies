@@ -51,6 +51,7 @@ const Search = () => {
       focus-within:border-primary
       relative
       mobile:mt-1
+      mobile:flex-1
       "
     >
       <div className="mr-2">

@@ -1,18 +1,27 @@
+"use client";
 import Link from "next/link";
 import React from "react";
 import Search from "./Search";
 import { RiMovie2Line } from "react-icons/ri";
+import useScroll from "@/hooks/useScroll";
+import clsx from "clsx";
 
-const Header = () => (
-  <div className="bg-header sticky top-0 z-[99] p-5">
-    <div className="flex items-center justify-between gap-3 mobile:block">
-      {/* brand & menu */}
-      <div className="flex items-center gap-6">
-        {/* brand */}
-          <Link href={"/"}><RiMovie2Line size={30}/></Link>
-        {/*  menu */}
-        <div
-          className="
+const Header = () => {
+  const isTop = useScroll(3);
+  return (
+    <div
+      className={clsx("fixed w-full top-0 z-[99] mobile:p-3 p-5 duration-150", !isTop && "bg-header")}
+    >
+      <div className="flex items-center justify-between gap-3">
+        {/* brand & menu */}
+        <div className="flex items-center gap-6">
+          {/* brand */}
+          <Link href={"/"}>
+            <RiMovie2Line size={30} />
+          </Link>
+          {/*  menu */}
+          <div
+            className="
         pt-1.5
         flex 
         items-center 
@@ -26,17 +35,17 @@ const Header = () => (
         mobile:bg-header
         mobile:gap-6
         "
-        >
-          <Link href={"/movies"}>Movies</Link>
-          <Link href={"/tv"}>TV</Link>
+          >
+            <Link href={"/movies"}>Movies</Link>
+            <Link href={"/tv"}>TV</Link>
+          </div>
         </div>
-      </div>
 
-      {/* search */}
-      <Search />
-      
+        {/* search */}
+        <Search />
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default Header;

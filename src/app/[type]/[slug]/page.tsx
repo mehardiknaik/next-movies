@@ -28,32 +28,39 @@ export default async function Pages({ params: { slug, type } }: any) {
 
   return (
     <>
-      <FilmCover src={data.backdrop_path} />
+      <FilmCover src={data.backdrop_path || data.poster_path} />
       {/* poster and text */}
-      <div className="-mt-[150px] flex items-center relative z-10 mobile:block">
-        <Image
-          alt={data.title}
-          width={200}
-          height={300}
-          src={data.poster_path?`https://image.tmdb.org/t/p/w300${data.poster_path}`:'/noposter.jpg'}
-          className="w-[200px] min-w-[200px] h-[300px] mobile:mx-auto ml-5 min-h-[200px] object-cover rounded-xl"
-        />
-        <div className="px-3 flex flex-col items-start gap-3">
-          <p className="text-xl line-clamp-1">{data.title}</p>
-          <ul className="flex items-center gap-3">
-            {data?.genres?.map(({ name, id }: any) => (
-              <li
-                key={id}
-                className="px-3 py-1.5 bg-primary rounded-lg text-sm"
-              >
-                {name}
-              </li>
-            ))}
-          </ul>
-          <p className="line-clamp-4 opacity-[0.9]">{data.overview}</p>
+      <div className="container">
+        <div className="-mt-[150px] flex items-center relative z-10 mobile:block mobile:-mt-16">
+          <Image
+            alt={data.title}
+            width={200}
+            height={300}
+            src={
+              data.poster_path || data.profile_path
+                ? `https://image.tmdb.org/t/p/w300${
+                    data.poster_path || data.profile_path
+                  }`
+                : "/noposter.jpg"
+            }
+            className="w-[200px] min-w-[200px] h-[300px] mobile:mx-auto ml-5 min-h-[200px] object-cover rounded-xl"
+          />
+          <div className="px-3 flex flex-col items-start gap-3">
+            <p className="text-xl line-clamp-1">{data.title}</p>
+            <ul className="flex items-center gap-3">
+              {data?.genres?.map(({ name, id }: any) => (
+                <li
+                  key={id}
+                  className="px-3 py-1.5 bg-primary rounded-lg text-sm"
+                >
+                  {name}
+                </li>
+              ))}
+            </ul>
+            <p className="line-clamp-4 opacity-[0.9]">{data.overview}</p>
+          </div>
         </div>
       </div>
-
       {/* <div>{JSON.stringify(data)}</div> */}
     </>
   );

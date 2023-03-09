@@ -25,7 +25,7 @@ export const TrendingHero = ({ data }: any) => {
           <Link
             href={`/${e.media_type}/${e.id}`}
             prefetch={false}
-            className="h-[300px] mobile:h-[200px] relative flex items-center cursor-pointer"
+            className="h-[400px] mobile:h-[250px] relative flex items-center cursor-pointer"
           >
             {/* bg image */}
             <div className="absolute left-0 top-0 right-0 bottom-0 hover:scale-105 duration-[2000ms]">
@@ -34,9 +34,10 @@ export const TrendingHero = ({ data }: any) => {
                 src={`https://image.tmdb.org/t/p/original${e.backdrop_path}`}
                 alt="ad"
                 width={800}
-                height={800}
+                height={400}
                 className="rounded-sm bg-primary h-full w-full"
               />
+              <div className="overlay-film-cover"></div>
             </div>
             {/* text */}
             <div className="flex ml-12 mobile:ml-1 flex-col gap-3 items-start relative z-10 max-w-[50%] mobile:max-w-[100%]">

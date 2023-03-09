@@ -54,7 +54,7 @@ export default async function Pages({ params: { slug, type } }: any) {
         </div>
       </div>
 
-      <div>{JSON.stringify(data)}</div>
+      {/* <div>{JSON.stringify(data)}</div> */}
     </>
   );
 }
